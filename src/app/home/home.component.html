@@ -1,1 +1,14 @@
-<p>home works!</p>
+<h2>Blog posts</h2>
+
+<div *ngIf="(posts$ | async) as posts">
+    <ul *ngIf="posts?.length != 0; else noPosts">
+        <li *ngFor="let post of posts">
+            <a [routerLink]="['/posts', post.id]">
+                {{ post.title }} | {{ post.published_at | date:'dd.MM.yyyy'}}
+            </a>
+        </li>
+    </ul>
+</div>
+<ng-template #noPosts>
+    <p>Keine Blogposts</p>
+</ng-template>
