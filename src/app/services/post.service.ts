@@ -14,5 +14,14 @@ export class PostService {
 
   loadPosts(): Observable<Post[]> {
     return this.httpClient.get<Post[]>(this.postUrl);
-  } 
+  }
+
+  loadPostById(id: number): Observable<Post> {
+    const url = this.postUrl + '/' + id;
+    return this.httpClient.get<Post>(url);
+  }
+
+  searchPosts(): Observable<Post[]> {
+    return this.httpClient.post<Post[]>(this.postUrl, 'body');
+  }
 }

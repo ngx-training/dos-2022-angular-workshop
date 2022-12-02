@@ -15,6 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateFormComponent } from './create-form/create-form.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PostsComponent } from './posts/posts.component';
+import { DetailComponent } from './posts/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     ParentComponent,
     ChildComponent,
     CreateFormComponent,
-    HomeComponent
+    HomeComponent,
+    PostsComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
